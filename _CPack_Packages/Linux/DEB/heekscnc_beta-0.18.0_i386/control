@@ -1,0 +1,13 @@
+Package: heekscnc
+Version: 0.18.0
+Section: science
+Priority: optional
+Architecture: i386
+Depends: python-wxgtk2.8, libgtkglext1 (>= 1.2), python (>= 2.5), libboost-python1.40.0 | libboost-python1.42.0, python
+Recommends: heekscad (>= 0.15.1), libopencascade-ocaf-6.3.0
+Installed-Size: 35586
+Maintainer: HeeksCAD Developers <heekscad-devel@googlegroups.com>
+Description: HeeksCNC, CNC machining add-in for HeeksCAD
+ HeeksCNC is a CNC machining (CAM) add-in for HeeksCAD. It produces
+ g-code for CNC machines, such as those run by linuxcnc.org's EMC2
+
