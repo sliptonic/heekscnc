@@ -75,12 +75,18 @@ CRawMaterial::CRawMaterial()
 	CNCConfig config(ConfigScope());
 	config.Read(_T("RawMaterial_BrinellHardness"), &m_brinell_hardness, 0.0);
 	config.Read(_T("RawMaterial_MaterialName"), &m_material_name, _T("Please select a material to machine"));
+	config.Read(_T("RawMaterial_Thickness"), &m_thickness, 10.0);
 }
 
 double CRawMaterial::Hardness() const
 {
 	return(m_brinell_hardness);
 } // End Hardness() method
+
+double CRawMaterial::Thickness() const
+{
+	return(m_thickness);
+} // End Thickness() method
 
 
 void CRawMaterial::GetProperties(CProgram *parent, std::list<Property *> *list)
@@ -133,6 +139,7 @@ void CRawMaterial::WriteBaseXML(TiXmlElement *element)
 {
 	element->SetDoubleAttribute( "brinell_hardness", m_brinell_hardness);
 	element->SetAttribute( "raw_material_name", m_material_name.utf8_str());
+	element->SetDoubleAttribute( "thickness", m_thickness);
 } // End WriteBaseXML() method
 
 void CRawMaterial::ReadBaseXML(TiXmlElement* element)
@@ -146,6 +153,13 @@ void CRawMaterial::ReadBaseXML(TiXmlElement* element)
 	{
 		m_material_name = wxString(Ctt(element->Attribute("raw_material_name")));
 	} // End if - then
+
+	if (element->Attribute("thickness"))
+	{
+		element->Attribute("thickness", &m_thickness);
+	} // End if - then
+
+
 } // End ReadBaseXML() method
 
 /**
@@ -165,7 +179,7 @@ bool CRawMaterial::operator==( const CRawMaterial & rhs ) const
 {
 	if (m_material_name != rhs.m_material_name) return(false);
 	if (m_brinell_hardness != rhs.m_brinell_hardness) return(false);
-
+	if (m_thickness != rhs.m_thickness) return(false);
 	return(true);
 }
 

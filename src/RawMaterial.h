@@ -27,8 +27,11 @@ public:
 
 	wxString m_material_name;
 	double m_brinell_hardness;
+	double m_thickness;
 
 	double Hardness() const;
+	double Thickness() const;
+	
 
 	void GetProperties(CProgram *parent, std::list<Property *> *list);
 
