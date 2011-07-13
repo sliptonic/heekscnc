@@ -210,14 +210,8 @@ void COp::ReadDefaultValues()
 			default_tool = FIND_FIRST_TOOL( CToolParams::eDrill );
 			if (default_tool <= 0) default_tool = FIND_FIRST_TOOL( CToolParams::eCentreDrill );
 			break;
-		case AdaptiveType:
-			default_tool = FIND_FIRST_TOOL( CToolParams::eEndmill );
-			if (default_tool <= 0) default_tool = FIND_FIRST_TOOL( CToolParams::eSlotCutter );
-			if (default_tool <= 0) default_tool = FIND_FIRST_TOOL( CToolParams::eBallEndMill );
-			break;
 		case ProfileType:
 		case PocketType:
-		case RaftType:
 		case CounterBoreType:
 			default_tool = FIND_FIRST_TOOL( CToolParams::eEndmill );
 			if (default_tool <= 0) default_tool = FIND_FIRST_TOOL( CToolParams::eSlotCutter );
@@ -229,17 +223,13 @@ void COp::ReadDefaultValues()
 			if (default_tool <= 0) default_tool = FIND_FIRST_TOOL( CToolParams::eBallEndMill );
 			if (default_tool <= 0) default_tool = FIND_FIRST_TOOL( CToolParams::eSlotCutter );
 			break;
-		case TurnRoughType:
-			default_tool = FIND_FIRST_TOOL( CToolParams::eTurningTool );
-			break;
-        case PositioningType:
+		case PositioningType:
 		case ProbeCentreType:
 		case ProbeEdgeType:
 		case ProbeGridType:
 			default_tool = FIND_FIRST_TOOL( CToolParams::eTouchProbe );
 			break;
         case ChamferType:
-        case InlayType:
 			default_tool = FIND_FIRST_TOOL( CToolParams::eChamfer );
 			break;
 

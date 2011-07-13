@@ -161,20 +161,15 @@ bool COperations::IsAnOperation(int object_type)
 	{
 		case ProfileType:
 		case PocketType:
-		case RaftType:
 		case ZigZagType:
 		case WaterlineType:
-		case AdaptiveType:
 		case DrillingType:
 		case CounterBoreType:
-		case TurnRoughType:
 		case PositioningType:
 		case ProbeCentreType:
 		case ProbeEdgeType:
 		case ProbeGridType:
 		case ChamferType:
-		case ContourType:
-		case InlayType:
 		case ScriptOpType:
 		case AttachOpType:
 		case UnattachOpType:
