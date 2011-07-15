@@ -110,9 +110,10 @@ class Parser(nc.Parser):
             self.j = eval(word[1:])
             self.move = True
         elif (word[0] == 'K' or word[0] == 'k'):
-            self.col = "axis"
-            self.k = eval(word[1:])
-            self.move = True
+	    pass
+            #self.col = "axis"
+            #self.k = eval(word[1:])
+            #self.move = True
         elif (word[0] == 'M') : self.col = "misc"
         elif (word[0] == 'N') : self.col = "blocknum"
         elif (word[0] == 'O') : self.col = "program"
@@ -149,8 +150,8 @@ class Parser(nc.Parser):
             self.col = "axis"
             self.z = eval(word[1:])
             self.move = True
-        elif (word[0] == '(') : (self.col, self.cdata) = ("comment", True)
-        elif (word[0] == '!') : (self.col, self.cdata) = ("comment", True)
+	elif (word[0] == '(') : (self.col, self.cdata) = ("comment", True)
+	elif (word[0] == '!') : (self.col, self.cdata) = ("comment", True)
         elif (word[0] == ';') : (self.col, self.cdata) = ("comment", True)
         elif (word[0] == '#') : self.col = "variable"
         elif (word[0] == ':') : self.col = "blocknum"
