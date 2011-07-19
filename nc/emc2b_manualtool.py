@@ -41,21 +41,22 @@ class Creator(iso_modal.Creator):
     def tool_change(self, id):
 	global ToolID
       	self.write_blocknum()
-      	self.write((self.TOOL() % id) + '\n')
-	if (ToolID == 0):
+      	if (ToolID == 0):
       	    self.comment('this code sets the reference tool length')
       	    self.comment('use G30.1 to set the predefined tool location')
       	    self.write('G90 (Absolute Distance mode)\n')
       	    self.write('g53 g0 z132.08\n')
       	    self.write('g49 (disable tool length comp)\n')
       	    self.write('g30 (above switch)\n')
-      	    self.write('g91\n')
-      	    self.write('g38.2 z-125 f200 (measure)\n')
+      	    self.write((self.TOOL() % id) + '\n')
+	    self.write('g91\n')
+      	    self.write('g38.2 z-110 f200 (measure)\n')
       	    self.write('g90\n')
       	    self.write('#1000=#5063 (save reference tool length)\n')
       	    self.comment('debug,reference length is #1000')
       	    self.comment('move back to safe pos')
       	    self.write('g53 g0 z132.08\n')
+	    self.write('M0 (pause to turn the spindle back on)\n')
       	    ToolID = id
 	else:
       	    self.t = id
@@ -63,15 +64,14 @@ class Creator(iso_modal.Creator):
       	    self.write('G90 (Absolute Distance mode)\n')
       	    self.write('G0 G53 z132.08\n')
       	    self.write('G30 (above switch)\n')
+      	    self.write((self.TOOL() % id) + '\n')
       	    self.write('G49 (measure without the last tools offset)\n')
       	    self.write('G91\n')
-      	    self.write('G38.2 z-125 f200 (measure)\n')
+      	    self.write('G38.2 z-110 f200 (measure)\n')
       	    self.write('G90\n')
-      	    self.write('G43.1 k[#5063-#1000] (set new tool offset)\n')
-      	    self.comment('debug,reference length was #1000')
-      	    self.comment('debug,new length is #5063')
-      	    self.comment('debug,setting offset [#5063-#1000]')
-      	    self.write('G0 G53 z132.08\n')
+      	    self.write('G43.1 Z[#5063-#1000] (set new tool offset)\n')
+      	    self.write('G53 G0 z132.08\n')
+	    self.write('M0 (pause to turn the spindle back on)\n')
 
 ############################################################################
 ##  Settings
