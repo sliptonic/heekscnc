@@ -15,7 +15,7 @@ class Parser(nc.Parser):
     def __init__(self):
         nc.Parser.__init__(self)
 
-        self.pattern_main = re.compile('([(!;].*|\s+|[a-zA-Z0-9_:](?:[+-])?\d*(?:\.\d*)?|\w\#\d+|\(.*?\)|\#\d+\=(?:[+-])?\d*(?:\.\d*)?)')
+        self.pattern_main = re.compile('([(!;\[\]#].*|\s+|[a-zA-Z0-9_:](?:[+-])?\d*(?:\.\d*)?|\w\#\d+|\(.*?\)|\#\d+\=(?:[+-])?\d*(?:\.\d*)?)')
         self.arc_centre_absolute = False
         self.arc_centre_positive = False
         self.oldx = None
