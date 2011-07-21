@@ -59,7 +59,11 @@ class HxmlWriter:
         if (y != None) :
             self.file_out.write(' y="%.6f"' % y)
         if (z != None) :
-            self.file_out.write(' z="%.6f"' % z)
+	    if isinstance(z,float):
+            	self.file_out.write(' z="%.6f"' % z)
+	    elif isinstance(z,int):
+            	self.file_out.write(' z="%.6f"' % z)
+	    else : self.file_out.write(z)
         if (a != None) : self.file_out.write(' a="%.6f"' % a)
         if (b != None) : self.file_out.write(' b="%.6f"' % b)
         if (c != None) : self.file_out.write(' c="%.6f"' % c)

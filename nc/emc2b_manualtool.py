@@ -69,7 +69,7 @@ class Creator(iso_modal.Creator):
       	    self.write('G91\n')
       	    self.write('G38.2 z-110 f200 (measure)\n')
       	    self.write('G90\n')
-      	    self.write('G43.1 Z[#5063-#1000] (set new tool offset)\n')
+      	    self.write('G43.1 Z [#5063-#1000] (set new tool offset)\n')
       	    self.write('G53 G0 z132.08\n')
 	    self.write('M0 (pause to turn the spindle back on)\n')
 
