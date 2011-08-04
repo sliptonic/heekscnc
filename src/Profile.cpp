@@ -25,6 +25,7 @@
 #include "MachineState.h"
 #include "Tags.h"
 #include "Tag.h"
+#include "ProfileDlg.h"
 
 #include <gp_Pnt.hxx>
 #include <gp_Ax1.hxx>
@@ -398,6 +399,23 @@ const wxBitmap &CProfile::GetIcon()
 	static wxBitmap* icon = NULL;
 	if(icon == NULL)icon = new wxBitmap(wxImage(theApp.GetResFolder() + _T("/icons/profile.png")));
 	return *icon;
+}
+
+static bool OnEdit(HeeksObj* object)
+{
+	ProfileDlg dlg(heeksCAD->GetMainFrame(), (CProfile*)object);
+	if(dlg.ShowModal() == wxID_OK)
+	{
+		dlg.GetData((CProfile*)object);
+		((CProfile*)object)->WriteDefaultValues();
+		return true;
+	}
+	return false;
+}
+
+void CProfile::GetOnEdit(bool(**callback)(HeeksObj*))
+{
+	*callback = OnEdit;
 }
 
 bool CProfile::Add(HeeksObj* object, HeeksObj* prev_object)

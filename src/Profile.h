@@ -107,7 +107,7 @@ public:
 #ifdef OP_SKETCHES_AS_CHILDREN
 	void ReloadPointers();
 #endif
-
+	void GetOnEdit(bool(**callback)(HeeksObj*));
 	// Data access methods.
 	CTags* Tags(){return m_tags;}
 
