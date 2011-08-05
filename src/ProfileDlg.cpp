@@ -339,6 +339,12 @@ void ProfileDlg::OnChildFocus(wxChildFocusEvent& event)
 		SetPicture();
 	}
 }
+void ProfileDlg::OnComboTool( wxCommandEvent& event )
+{
+//	if(m_ignore_event_functions)return;
+	//SetPicture();
+}
+
 
 void ProfileDlg::OnComboToolOnSide( wxCommandEvent& event )
 {
