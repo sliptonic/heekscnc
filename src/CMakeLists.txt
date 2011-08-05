@@ -47,7 +47,7 @@ set( heekscnc_HDRS
     CNCPoint.h     Program.h      Interface.h          Probing.h        ScriptOp.h         TrsfNCCode.h
     Contour.h      Excellon.h     MachineState.h       Profile.h        SpeedOp.h          TurnRough.h
     CounterBore.h  Fixture.h      NCCode.h             ProgramCanvas.h  SpeedReference.h   Waterline.h
-    CToolDlg.h     Fixtures.h     Operations.h         SpeedReferences.h
+    CToolDlg.h     Fixtures.h     Operations.h         SpeedReferences.h ProfileDlg.h
     ${HeeksCadDir}/interface/Box.h                ${HeeksCadDir}/interface/Plugin.h
     ${HeeksCadDir}/interface/DoubleInput.h        ${HeeksCadDir}/interface/PropertyCheck.h
     ${HeeksCadDir}/interface/GripData.h           ${HeeksCadDir}/interface/PropertyChoice.h
@@ -80,7 +80,7 @@ set( heekscnc_SRCS
     Contour.cpp      Fixture.cpp            Pocket.cpp         Reselect.cpp         TurnRough.cpp
     CounterBore.cpp  Fixtures.cpp           PocketDlg.cpp      ScriptOp.cpp         Waterline.cpp
     CTool.cpp        HeeksCNC.cpp           Positioning.cpp    SpeedOp.cpp          ZigZag.cpp
-    CToolDlg.cpp     HeeksCNCInterface.cpp  Probing.cpp        SpeedReference.cpp
+    CToolDlg.cpp     HeeksCNCInterface.cpp  Probing.cpp        SpeedReference.cpp   ProfileDlg.cpp
     CuttingRate.cpp  Inlay.cpp              Profile.cpp        SpeedReferences.cpp
     Interface.cpp    ProgramCanvas.cpp
     ${HeeksCadDir}/interface/HDialogs.cpp          ${HeeksCadDir}/interface/PropertyColor.cpp
