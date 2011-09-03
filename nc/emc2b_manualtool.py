@@ -316,5 +316,10 @@ class Creator(iso_modal.Creator):
         self.write_blocknum()
         self.write('(LOG,' + message + ')\n')
 
+    def absolute(self):
+        self.g_list.append(self.ABSOLUTE())
+        self.arc_centre_absolute = True
+        self.absolute_flag = True
+
 nc.creator = Creator()
 
