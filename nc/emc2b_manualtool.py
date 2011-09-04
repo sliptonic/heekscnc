@@ -31,7 +31,7 @@ class Creator(iso_modal.Creator):
 
     def program_begin(self, id, comment):
         if (self.useCrc == False):
-            self.write( ('(Created with emc2b post processor ' + str(now.strftime("%Y/%m/%d %H:%M")) + ')' + '\n') )
+            self.write( ('(Created with emc2b_manualtool post processor ' + str(now.strftime("%Y/%m/%d %H:%M")) + ')' + '\n') )
         else:  
             self.write( ('(Created with emc2b Cutter Radius Compensation post processor ' + str(now.strftime("%Y/%m/%d %H:%M")) + ')' + '\n') )
   
