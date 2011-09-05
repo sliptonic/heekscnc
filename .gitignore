@@ -10,6 +10,7 @@ CMakeFiles/
 *.cmake
 *Makefile
 CMakeCache.txt
+
 install_manifest.txt
 
 #ignore the packages
@@ -18,3 +19,8 @@ _CPack_Packages/
 
 #ignore the translation binaries
 *HeeksCAD.mo
+
+#ignore the Doxygen generated files
+DOC/
+
+
